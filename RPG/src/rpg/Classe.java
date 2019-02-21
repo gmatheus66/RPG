@@ -151,4 +151,10 @@ public class Classe  implements Personagem{
 		this.escolha_classe = escolha_classe;
 	}
 
+	@Override
+	public String getNome(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
