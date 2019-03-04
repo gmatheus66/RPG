@@ -2,26 +2,59 @@ package rpg;
 
 import java.util.Random;
 
-public class enemies implements Personagem{
-	
-	private String nome[] = {"Javali","Ettercap","Salamandra","Manticore", "Boarman","Abalin","Morcego","Pantera","Troll","Makara","Avolakia","Gárgulas","Gnoll","Gimlorck","Harpias","Espantalho","Cobra","Golem","Ciclope","Esqueleto","Basilisco","Andarilho" };
+public class enemies implements Personagem {
+
+	private String nome[] = { "Javali", "Ettercap", "Salamandra", "Manticore", "Boarman", "Abalin", "Morcego",
+			"Pantera", "Troll", "Makara", "Avolakia", "Gárgulas", "Gnoll", "Gimlorck", "Harpias", "Espantalho", "Cobra",
+			"Golem", "Ciclope", "Esqueleto", "Basilisco", "Andarilho" };
 	private int HP;
 	private int SP;
 	private String escolha_classe;
+	private int contador;
 
-	Random gera = new Random();
-	gera.nextInt(20);//colocar numero tamanho do array 
 	
-	@Override
-	public String getNome(int i) {
-		// TODO Auto-generated method stub
-		return nome[i];
+	public int getContador() {
+		return contador;
+	}
+
+
+	public void setContador(int contador) {
+		this.contador = contador;
+	}
+
+
+	public int Random_SP() {
+		Random gera = new Random();
+		return gera.nextInt();
+	}
+	
+	
+	//gerar HP randomico
+	public int RandomHP() {
+		Random gerar = new Random();
+		return gerar.nextInt(3000);
+	}
+	
+	
+	//gerar enemies randomicos
+	public int Random_enemies() {
+		Random gera = new Random();
+		return gera.nextInt(nome.length);
 	}
 
 	@Override
-	public void setNome(String Nome) {
+	public String getNome(int i) {
 		// TODO Auto-generated method stub
+		setContador(i);
+		return nome[i];
+	}
+
+	
+	public void setNome(String Nome, int i) {
 		
+		this.nome[i +1] = Nome;
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
@@ -65,5 +98,12 @@ public class enemies implements Personagem{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public void setNome(String Nome) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 }

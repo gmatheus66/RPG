@@ -15,4 +15,5 @@ public interface Personagem {
 	public void setEscolha_classe(String escolha_classe);
 	String getNome(int i);
 	
+	
 }
