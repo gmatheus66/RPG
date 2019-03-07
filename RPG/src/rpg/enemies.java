@@ -10,7 +10,8 @@ public class enemies implements Personagem {
 	private int HP;
 	private int SP;
 	private String escolha_classe;
-	private int contador;
+	private int contador = 0;
+	int arrayLength = nome.length;
 
 	
 	public int getContador() {
@@ -25,14 +26,16 @@ public class enemies implements Personagem {
 
 	public int Random_SP() {
 		Random gera = new Random();
-		return gera.nextInt();
+		setSP(gera.nextInt(2500));
+		return getSP();
 	}
 	
 	
 	//gerar HP randomico
 	public int RandomHP() {
 		Random gerar = new Random();
-		return gerar.nextInt(3000);
+		setHP(gerar.nextInt(3000));
+		return getHP();
 	}
 	
 	

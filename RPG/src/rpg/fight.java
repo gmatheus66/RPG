@@ -8,7 +8,6 @@ public class fight extends Classe {
 
 	public void luta() {
 		enemies enemies = new enemies();
-
 		enemies.getNome(enemies.Random_enemies());
 		
 

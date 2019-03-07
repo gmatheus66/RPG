@@ -10,6 +10,8 @@ import java.io.IOException;
 public class Arquivo {
 
 	private String N;
+	private BufferedReader reader;
+	private BufferedReader reader2;
 
 	public String getN() {
 		return N;
@@ -62,7 +64,7 @@ public class Arquivo {
 	public void LerArquivo() throws IOException {
 		try {
 			FileReader lerarq = new FileReader(getN() + ".txt");
-			BufferedReader reader = new BufferedReader(lerarq);
+			reader = new BufferedReader(lerarq);
 			String line;
 			while ((line = reader.readLine()) != null) {
 				System.out.println(line);
@@ -71,7 +73,27 @@ public class Arquivo {
 			e.printStackTrace();
 			System.err.println("ERRO ao ler o arquivo");
 		}
+		
 
+	}
+	
+	public void AlterarLinha(String Nome, String Linha, String Linha_Alterada) throws IOException {
+		FileReader lerarq = new FileReader(Nome + ".txt");
+		reader2 = new BufferedReader(lerarq);
+		String line;
+		while((line = reader2.readLine())!= null) {
+			if(line == Linha) {
+				FileWriter fw = new FileWriter(Nome + ".txt");
+				BufferedWriter bw = new BufferedWriter(fw);
+				bw.write(Linha_Alterada);
+				bw.close();
+				
+			}else {
+				System.out.println(line);
+			}
+		}
+		
+		
 	}
 
 	public void ExcluirArquivo(String Nome) {
