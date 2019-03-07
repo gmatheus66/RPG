@@ -3,6 +3,8 @@ package rpg;
 public class Equipamentos implements Equip{
 	private int dano;
 	private int defesa;
+	private String armas[] = {"Machados","Greatswords","Foice","Cajados","Adagas","Espada Longa","Katana","Lança","Arco", "Espada Curta"};
+	
 
 	@Override
 	public int getDano() {
